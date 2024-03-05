@@ -4,23 +4,40 @@ const loadPhones = async () => {
     const phones = data.data; 
     
     displayPhones(phones)
+    console.log(`https://openapi.programming-hero.com/api/phones?search=iphone`)
 }
 
-const searchPhones = async (searchValue) => {
+const searchPhones = async (searchValue, isViewAll) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchValue}`)
     const data = await res.json();
     const phones = data.data; 
-    console.log(searchValue);
-    displayPhones(phones)
+    displayPhones(phones, isViewAll)
+
+    console.log(`https://openapi.programming-hero.com/api/phones?search=${searchValue}`)
 }
 
-const displayPhones = (phones) => {
+const displayPhones = (phones, isViewAll) => {
     const phoneContainer = document.getElementById('phone-container');
+
     
-    const searchBtn = document.getElementById('search-btn')
     phoneContainer.innerHTML = "";
 
+    console.log(phones.length)  
+    console.log('is show all', isViewAll)
 
+    if(phones.length >= 9 ){
+        viewAllBtn.classList.remove('hidden')
+    }
+    else{
+        viewAllBtn.classList.add('hidden')
+    }
+
+    // slice result if showall is not true
+    if(!isViewAll){
+        phones = phones.slice(0, 9)
+    }
+    
+    // empty search
     
 
     phones.forEach(phones => {
@@ -44,13 +61,24 @@ const displayPhones = (phones) => {
 
     });
 
-    // search handle
-    searchBtn.onclick = function(){
-        const searchInput =document.getElementById('search-input');
-        const searchValue = searchInput.value;
-        console.log(searchValue);
-        searchPhones(searchValue);
+   
+}
+
+// search handle
+const searchHandle = (isViewAll) => {
+    const searchInput =document.getElementById('search-input');
+    const searchValue = searchInput.value;
+    searchPhones(searchValue, isViewAll);
+    console.log(searchValue)
+    if(searchValue === ""){
+        loadPhones();
     }
+}
+
+// view all handle
+const viewAllBtn = document.getElementById('view-all-btn');
+viewAllBtn.onclick = function(isViewAll, searchValue){
+    searchHandle(true);
 }
 
 loadPhones();
