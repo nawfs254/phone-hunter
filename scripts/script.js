@@ -61,11 +61,12 @@ const displayPhones = (phones, isViewAll) => {
 
     });
 
-   
+   toggleLoader(false);
 }
 
 // search handle
 const searchHandle = (isViewAll) => {
+    toggleLoader(true);
     const searchInput =document.getElementById('search-input');
     const searchValue = searchInput.value;
     searchPhones(searchValue, isViewAll);
@@ -73,12 +74,25 @@ const searchHandle = (isViewAll) => {
     if(searchValue === ""){
         loadPhones();
     }
+
+    
 }
 
 // view all handle
 const viewAllBtn = document.getElementById('view-all-btn');
 viewAllBtn.onclick = function(isViewAll, searchValue){
     searchHandle(true);
+}
+
+// show/hide loader
+const toggleLoader = (isLoading) =>{
+    const loader = document.getElementById('loader');
+    if(isLoading){
+        loader.classList.remove('hidden');
+    }
+    else{
+        loader.classList.add('hidden');
+    }
 }
 
 loadPhones();
