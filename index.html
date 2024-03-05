@@ -9,8 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- fontawesome link -->
+    <script src="https://kit.fontawesome.com/f5ad1aa0f6.js" crossorigin="anonymous"></script>
+
     <!-- link custom css -->
     <link rel="stylesheet" href="./style.css">
+
 </head>
 <body class="font-poppins">
     <!-- header -->
@@ -19,7 +23,7 @@
         <section class="navbar w-full md:w-4/5 mx-auto p-0">
             <div class="navbar bg-transparent">
                 <div class="flex-1">
-                  <a class="btn bg-transparent hover:bg-[var(--bg)] border-none text-xl md:text-2xl font-bold">Phone Hunter</a>
+                  <a class="btn bg-transparent hover:bg-[var(--bg)] border-none text-2xl md:text-4xl font-bold">Phone Hunter</a>
                 </div>
                 <div class="flex-none">
                   <ul class="menu menu-horizontal px-1">
@@ -81,8 +85,7 @@
         </section>
 
         <!-- modal container -->
-        <!-- You can open the modal using ID.showModal() method -->
-        <button class="btn" onclick="show_details_modal.showModal()">open modal</button>
+        <!-- You can open the modal using ID.showModal() method --> 
         <dialog id="show_details_modal" class="modal">
         <div class="modal-box">
             <form method="dialog">
@@ -95,6 +98,19 @@
         </div>
         </dialog>
     </main>
+
+    <!-- footer -->
+    <footer class="bg-[var(--bg)] p-10 my-16 mb-0 flex flex-col gap-4 items-center">
+        <h1 class="text-4xl text-center font-extrabold">Phone Hunter</h1>
+        <p class="text-center w-full md:w-1/2">Explore the latest in mobile technology with our comprehensive phone database. From specifications to reviews, find everything you need to make informed decisions about your next smartphone purchase. Stay connected and stay informed with our constantly updated collection of phone data.</p>
+        <div class="social-icons flex gap-4 text-5xl">
+            <a href="https://github.com/nawfs254"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/nawfs-ul-ahsun"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+
+        <p><i class="fa-regular fa-copyright"></i> Designed by <a href="https://www.programming-hero.com/"><strong>Programming Hero</strong></a>, Developed bt <a href="https://www.linkedin.com/in/nawfs-ul-ahsun"><strong>Nawfs Ul Ahsun</strong></a></p>
+        
+    </footer>
 
     <!-- link JS -->
     <script src="./scripts/script.js"></script>
