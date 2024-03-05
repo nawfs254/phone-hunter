@@ -34,7 +34,7 @@
             <div class="banner-content mx-auto text-center space-y-4 px-4 py-5">
                 <h1 class="text-3xl md:text-6xl font-bold">Apple Iphone 13 Pro Max</h1>
                 <p class="w-full md:w-3/5 mx-auto">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou.</p>
-                <button class="btn bg-[var(--blue)] text-white hover:text-black hover:border-[var(--blue)] text-lg md:text-xl px-5 md:px-10 py-0 md:py-1 font-bold box-content">Buy Now</button>
+                <a href="#main"><button class="btn bg-[var(--blue)] text-white hover:text-black hover:border-[var(--blue)] text-lg md:text-xl px-5 md:px-10 py-0 md:py-1 font-bold box-content my-3">Buy Now</button></a>
             </div>
 
             <div class="flex w-full md:w-4/5 lg:w-3/5 mx-auto">
@@ -50,6 +50,23 @@
             </div>
         </section>
     </header>
+
+    <!-- main -->
+    <main id="main" class="py-1">
+        <!-- search space -->
+        <section class="search flex flex-col items-center my-10 space-y-3 mx-3">
+            <h2 class="text-center text-2xl md:text-3xl font-semibold">Search your phone</h2>
+            <div class="input-field flex flex-col md:flex-row gap-2 md:gap-0">
+                <input type="text" class="border-none bg-gray-200 px-2 py-3 md:px-2 rounded-lg md:rounded-l-lg md:rounded-r-none" id="search-input">
+                <button class="btn bg-[var(--blue)] text-white hover:text-black rounded-lg md:rounded-l-none text-lg md:text-xl px-5 md:px-10 py-0 md:py-1 font-bold box-content border-1 border-[var(--blue)]" id="search-btn">Search</button>
+            </div>
+        </section>
+
+        <!-- phones container -->
+        <section id="phone-container" class="phone-container my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full md:w-4/5 gap-4 mx-auto">
+            
+        </section>
+    </main>
 
     <!-- link JS -->
     <script src="./scripts/script.js"></script>
